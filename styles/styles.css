@@ -1,32 +1,62 @@
 
 body {
   background-color: #A100004D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
-
 h1 {
   color: red;
 }
-.wrapper {
+.container {
   display: flex;  
-  flex-flow: column;
-  margin-left:20%;
-  margin-right:20%;
+  flex-direction: column;
+  width: 64%;
   justify-content: center;
   align-items: center;
   background-color: #FCFCFC;
+  gap: 24px;
 }
 
-.headerImage {
+.top-image-container {
+  border:1px #FCFCFC solid;
+}
+.top-image {
   width: 100%;
   height: auto;
+  object-fit: cover;
+}
+.content-container {
+    padding:48px 48px 64px 48px;
 }
 
 .description {
   font-size: 16px;
   text-align: left;
   background-color: #EBEBEB;
-  padding:10px
+  padding:16px
   
+}
+
+.ingredients-container {
+  
+  width: 100%;
+}
+
+.cooking-instructions-container {
+  
+  width: 100%;
+}
+
+.bottom-image-container {
+  flex-direction: row;
+}
+.bottom-image{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 
