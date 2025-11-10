@@ -1,0 +1,33 @@
+
+body {
+  background-color: #A100004D;
+}
+
+h1 {
+  color: red;
+}
+.wrapper {
+  display: flex;  
+  flex-flow: column;
+  margin-left:20%;
+  margin-right:20%;
+  justify-content: center;
+  align-items: center;
+  background-color: #FCFCFC;
+}
+
+.headerImage {
+  width: 100%;
+  height: auto;
+}
+
+.description {
+  font-size: 16px;
+  text-align: left;
+  background-color: #EBEBEB;
+  padding:10px
+  
+}
+
+
+
