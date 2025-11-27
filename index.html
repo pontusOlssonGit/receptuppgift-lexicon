@@ -2,34 +2,42 @@
 <html lang="sv">
 
 <head>
-    <meta name="description" content="Pancake recipe in Swedish">
+    <meta name="description" content="Enkelt Recept på pannkakor">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
     <title>Enkelt Recept på Pannkakor</title>
 </head>
+ 
 
 <body>
+    <a href="#recipe-content" class="skip-link">Hoppa till receptet</a>
     <header>
-        <nav>
-            <ul class="header">
-                <li class="header"><a href="/recept">Recept</a></li>
-                <li class="header"><a href="/recept2">Recept2</a></li>
-                <li class="header"><a href="/recept3">Recept3</a></li>
+        <nav aria-label="Huvudmeny">
+            <ul>
+                <li><a href="/amerikanska-pannkakor">Amerikanska Pannkakor</a></li>
+                <li><a href="/vafflor">Våfflor</a></li>
+                <li><a href="/belgiska-vafflor">Belgiska Våfflor</a></li>
             </ul>
         </nav>
     </header>
+   
+
+
     <main class="container">
 
         <div class="top-image-container">
-            <img class="top-image" src="images/pancake-header.jpg" alt="pancake with whipped cream and strawberries">
+            <img class="top-image" src="images/pancake-header.jpg" alt="">
         </div>
 
-        <div class="content-container">
+        <article class="recipe-container">
 
-            <h1>Enkelt Recept på pannkakor</h1>
-            <div class="description-container">
-                <p>Gör traditionella tunna pannkakor med detta enkla och goda pannkakasrecept.</p>
-            </div>
+            <section class="description-container" id="recipe-content">
+                <h1>Enkelt Recept på pannkakor</h1>
+                <div class="description-background">
+                    <p>Gör traditionella tunna pannkakor med detta enkla och goda pannkaksrecept.</p>
+                </div>
+            </section>
 
             <section class="ingredients-container">
                 <h2>Ingredienser</h2>
@@ -56,18 +64,24 @@
                 </ol>
             </section>
 
-            <h2 class="bottom-image-heading">Serveringsförslag</h2>
-            <div class="bottom-image-container">
-                <img class="bottom-image" src="images/pancake-bottom-left.jpg" alt="plain pancakes">
-                <img class="bottom-image" src="images/pancake-bottom-right.jpg" alt="pancakes with sliced oranges">
-            </div>
+            <section class="bottom-image-container">
+                <h2 class="bottom-image-heading">Serveringsförslag</h2>
+                <figure class="left">
+                    <img class="bottom-image" src="images/pancake-bottom-left.jpg" alt="">
+                    <figcaption><i>Naturella Pannkakor</i></figcaption>
+                </figure>
+                <figure class="right">
+                    <img class="bottom-image" src="images/pancake-bottom-right.jpg" alt="">
+                    <figcaption><i>Serverad med skivad apelsin</i></figcaption>
+                </figure>
+            </section>
 
-        </div>
+        </article>
     </main>
     <footer>
-        <p>Min fina footer</p>
+        <p>Footer</p>
     </footer>
-    
+
 </body>
 
 </html>
