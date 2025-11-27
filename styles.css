@@ -1,11 +1,25 @@
 body {
     background-color: #A100004D;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     min-height: 100vh;
     margin: 0;
     padding-bottom: 64px;
     font-family: open-sans, sans-serif;
+}
+header {
+    width: 100%;
+    background-color: white;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+ul.header{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    
 }
 
 h1 {
