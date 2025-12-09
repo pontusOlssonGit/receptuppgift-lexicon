@@ -1,6 +1,6 @@
 :root {
     --red: #A10000;
-    --off-red: #7b0000;
+    --off-red: #9a9393;
     --red-bg: #A100004D;
     --white: #fff;
     --off-white: #FCFCFC;
@@ -8,28 +8,91 @@
     --font: 'open-sans', sans-serif;
 }
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    & ol, ul {
-    list-style: none;
-    }
-}
-html {
-    background: var(--white);
-    overflow-x: hidden;
-}
-
-body {
-    background: var(--red-bg);
-    font-family: var(--font);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 a {
-    color: var(--white);
     text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+header {
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    
+    width: 100%;
+    background: var(--white);
+    display: flex;
+    justify-content: center;
+
+    & nav {
+        
+        width: 90vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+
+        & .logo {
+            color: #666;
+            font-family: "Reem Kufi Fun", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: bold;
+            font-size: 3rem;
+            width: 30vw;
+        }
+
+        & button {
+            background-color:#BB595F;
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            width: 30vw;
+        }
+    }
+
+    & nav ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+
+        & li {
+            width: 200px;
+            text-align: center;
+            margin: 10px;
+            align-self: baseline;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            & a {
+                color: #666;
+                font-size: large;
+                font-weight: bold;
+
+                &:hover {
+                    color: #BB595F;
+                    transition: 0.3s
+                }
+            }
+
+
+
+        }
+
+    }
 }
 
 .skip-link {
@@ -45,142 +108,149 @@ a {
     }
 }
 
-header {
+
+.hero {
+    margin-bottom: 2rem;
+    height: 40vh;
     width: 100%;
-    background: var(--white);
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
+    position: relative;
+    overflow: hidden;
 
-    & nav {
+    & img {
         width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    & nav ul {
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-
-        & li {
-            width: 200px;
-            text-align: center;
-            margin: 10px;
-            color:#A10000;
-            
-            &:hover{
-            cursor: pointer;
-            color:black;
-            background: var(--off-red);
-            transition: 0.3s
-            }
-        }
-        
-    }
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    width: 64%;
-    align-items: center;
-    background: var(--off-white);
-    border: 1px var(--off-white) solid;
-    ;
-
-    & .top-image-container {
-        width: 100%;
-    }
-
-    & .top-image {
-        width: 100%;
-        height: 300px;
+        height: 100%;
         object-fit: cover;
-    }
-}
+        filter: blur(3px);
+        z-index: -1;
+        position: absolute;
 
-h1 {
-    color: var(--red);
-    font-size: 28px;
-    font-weight: bold;
-}
-.description-background {
-        margin-top: 0.5rem;
-        background: var(--grey);
-        & p {
-            padding:1rem;
-        }
     }
 
-.recipe-container {
-    padding: 24px 0 48px;
-    gap: 24px;
-    display: flex;
-    flex-direction: column;
-    width: 95%;
-
-    & :is(.ingredients-container, .cooking-instructions-container) {
-
-        & li {
-            padding-top: 16px;
-        }
-        & li:first-child {
-            padding-top: 0;
-        }
+    & h1,
+    p {
+        justify-self: center;
+        align-self: center;
+        width: 70vw;
+        margin-top: 4rem;
+        color: #ffffff;
+        z-index: 1;
+        font-size: 4rem;
     }
+
+    & p {
+        margin-top: 0;
+        font-size: large;
+    }
+
 }
 
-.bottom-image-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
     
-  
-    & h2 {
-        grid-column: span 2;
-        margin-bottom: 20px;
-        
-    }
-    & .bottom-image {
-        width: 400px;
-        height: 400px;
-        object-fit: cover;
-        grid-row: 2;
-    }
 }
-footer {
-    width: 100%;
-    height: 50px;
-    background: var(--white);
-    margin-top: 5%;
+
+.container {
+
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    align-items: stretch;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+
+    overflow: hidden;
+
     display: flex;
-    place-content: center;
+    flex-direction: column;
+
+    & a:hover {
+        text-decoration: underline;
+        text-decoration-color: #555;
+    }
 }
-@media (max-width: 1280px) {
-    main {
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 1.25rem;
+}
+
+.card p {
+    color: #666;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
         width: 95%;
     }
+
+    .card-image {
+        height: 180px;
+    }
 }
 
-@media (max-width: 980px) {
-    main {
-        width: 100%;
-    }
+footer {
+    margin-top: 2rem;
+    height: 40vh;
+    & .one {
+        background-color: #BB595F;;
+        height: 80%;
+        
+        
+        
 
-    nav ul {
-        flex-direction: column;
-        align-items: center;
+        & h4{
+            color:white;
+            font-family: "Reem Kufi Fun", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: bold;
+            font-size: 3rem;
+        }
     }
-
-    .bottom-image-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+     & .two {
+        background-color: white;
+        height: 20%;
+        border-bottom: 1rem solid #AF3C3F;;
     }
-
-    .bottom-image {
-        width: 100%;
-        height: auto;
-    }
+    
 }

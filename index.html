@@ -5,6 +5,11 @@
     <meta name="description" content="Enkelt Recept på pannkakor">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Bungee+Spice&family=Quicksand:wght@300..700&family=Reem+Kufi+Fun:wght@400..700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>Enkelt Recept på Pannkakor</title>
 </head>
@@ -12,78 +17,132 @@
 <body>
     <a href="#recipe-content" class="skip-link">Hoppa till receptet</a>
     <header>
-        <nav >
-            <span>Receptsidan</span>
+        <nav>
+            <span class="logo">Receptsidan</span>
             <ul>
-                <li><a href="/amerikanska-pannkakor">Amerikanska Pannkakor</a></li>
-                <li><a href="/vafflor">Våfflor</a></li>
-                <li><a href="/belgiska-vafflor">Belgiska Våfflor</a></li>
+                <li><a href="/index.html">Alla Recept</a></li>
+                <li><a href="/test.html">Om Oss</a></li>
+                <li><a href="/belgiska-vafflor">Kontakt</a></li>
             </ul>
             <button>
                 Logga in
             </button>
         </nav>
     </header>
-  
-   
-    <main class="container">
 
-        <div class="top-image-container">
-            <img class="top-image" src="images/pancake-header.jpg" alt="">
+
+    <section class="hero">
+        <img src="/images/hero.jpg" alt="" class="card-image">
+        <h1>Pannkakor</h1>
+        <p>-från hela världen.</p>
+
+    </section>
+    <main class="container">
+        <div class="card">
+            <a href="/index.html">
+                <img src="/images/pancake-bottom-left.jpg" alt="" class="card-image">
+            </a>
+            <div class="card-content">
+                <a href="/index.html">
+                    <h3>Vanliga Pannkakor</h3>
+                </a>
+                <p>En helt vanlig, klassisk pannkaka.</p>
+            </div>
         </div>
 
-        <article class="recipe-container">
+        <div class="card">
+            <a href="/index.html">
+                <img src="/images/american.jpg" alt="" class="card-image">
+            </a>
+            <div class="card-content">
+                <a href="/index.html">
+                    <h3>Amerikanska Pannkakor</h3>
+                </a>
+                <p>En tjockare pannkaka, serveras vanligtvis med lönnsirap.</p>
+            </div>
+        </div>
 
-            <section class="description-container" id="recipe-content">
-                <h1>Enkelt Recept på pannkakor</h1>
-                <div class="description-background">
-                    <p>Gör traditionella tunna pannkakor med detta enkla och goda pannkaksrecept.</p>
-                </div>
-            </section>
+        <div class="card">
+            <a href="/index.html">
+                <img src="/images/belgian.jpg" alt="" class="card-image">
+            </a>
+            <div class="card-content">
+                <a href="/index.html">
+                    <h3>Belgiska Våfflor</h3>
+                </a>
+                <p>En belgisk våffla gräddas i ett särskilt våffeljärn som ger en fyrkantig och lite högre form än en traditionell svensk våffla.</p>
+            </div>
+        </div>
 
-            <section class="ingredients-container">
-                <h2>Ingredienser</h2>
-                <span>För 4 portioner</span>
-                <ul>
-                    <li>2 1/2 dl vetemjöl</li>
-                    <li>1/2 tsk salt</li>
-                    <li>6 dl mjölk</li>
-                    <li>3 ägg</li>
-                    <li>smör (till stekning)</li>
-                    <li>sylt, bär eller frukt till servering</li>
-                </ul>
-            </section>
+        <div class="card">
+            <a href="/index.html">
+                <img src="/images/plattar.jpg" alt="" class="card-image">
+            </a>
+            <div class="card-content">
+                <a href="/index.html">
+                    <h3>Plättar</h3>
+                </a>
+                <p>Plättar tillagas av samma recept som pannkaka, men är betydligt mindre.</p>
+            </div>
+        </div>
 
-            <section class="cooking-instructions-container">
-                <h2>Så här gör du</h2>
-                <ol>
-                    <li>Blanda mjöl och salt i en bunke.</li>
-                    <li>Vispa i hälften av mjölken och vispa till en slät smet. </li>
-                    <li>Vispa i resten av mjölken och äggen. </li>
-                    <li>Låt smeten vila ca 10 minuter.. </li>
-                    <li> Stek tunna pannkakor i lite smör, för varje pannkaka, i en stek- eller pannkakspanna. </li>
-                    <li>Servera med sylt, bär eller frukt</li>
-                </ol>
-            </section>
+        <div class="card">
+            <a href="/index.html">
+                <img src="/images/saffranspannkaka.jpg" alt="" class="card-image">
+            </a>
+            <div class="card-content">
+                <a href="/index.html">
+                    <h3>Saffranspannkaka</h3>
+                </a>
+                <p>Saffranspannkaka eller Gotlandspannkaka är en lyxig efterrättsvariant från Gotland.</p>
+            </div>
+        </div>
 
-            <section class="bottom-image-container">
-                <h2 class="bottom-image-heading">Serveringsförslag</h2>
-                <figure class="left">
-                    <img class="bottom-image" src="images/pancake-bottom-left.jpg" alt="">
-                    <figcaption><i>Naturella Pannkakor</i></figcaption>
-                </figure>
-                <figure class="right">
-                    <img class="bottom-image" src="images/pancake-bottom-right.jpg" alt="">
-                    <figcaption><i>Serverad med skivad apelsin</i></figcaption>
-                </figure>
-            </section>
-
-        </article>
+        <div class="card">
+            <a href="/index.html">
+                <img src="/images/flaskpannkaka.jpg" alt="" class="card-image">
+            </a>
+            <div class="card-content">
+                <a href="/index.html">
+                    <h3>Fläskpannkaka</h3>
+                </a>
+                <p>Fläskpannkaka är ugnspannkaka som innehåller fint skurna tärningar av rimmat sidfläsk. Fläskpannkaka
+                    serveras traditionellt med lingonsylt.</p>
+            </div>
+        </div>
+        <div class="card">
+            <a href="/index.html">
+                <img src="/images/ugnspannkaka.jpg" alt="" class="card-image">
+            </a>
+            <div class="card-content">
+                <a href="/index.html">
+                    <h3>Ugnspannkaka</h3>
+                </a>
+                <p>Ugnspannkaka, i folkmun även kallad tjockpannkaka, är en pannkaka tillagad i långpanna i ugnen.</p>
+            </div>
+        </div>
+        <div class="card">
+            <a href="/index.html">
+                <img src="/images/crepes.jpg" alt="" class="card-image">
+            </a>
+            <div class="card-content">
+                <a href="/index.html">
+                    <h3>Crêpes</h3>
+                </a>
+                <p>Crêpes är franska för tunna pannkakor och kan ätas som förrätt eller dessert.</p>
+            </div>
+        </div>
     </main>
 
     <footer>
-        <p>Footer</p>
+        <section class="one">
+            <h4>footer</h4>
+        </section>
+        <section class="two">
+            <p>footer</p>
+        </section>
     </footer>
 
 </body>
+
 </html>
