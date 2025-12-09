@@ -135,16 +135,23 @@ header {
     p {
         justify-self: center;
         align-self: center;
-        width: 70vw;
-        margin-top: 4rem;
-        color: #ffffff;
+        width: 90vw;
+        margin-top: 10rem;
+        color: #fff;
         z-index: 1;
         font-size: 4rem;
+        text-decoration: underline;
+        text-decoration-color: #BB595F;
+        text-decoration-thickness: 10px;
     }
 
     & p {
         margin-top: 0;
         font-size: large;
+        padding-top:0.5rem;
+        text-decoration: none;
+        text-decoration-color: #BB595F;
+        text-decoration-thickness: 10px;
     }
 
 }
@@ -310,4 +317,118 @@ footer {
         }
     }
     
+}
+
+
+
+
+
+
+
+.main-recipe {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+ 
+   
+}
+.recipe-container{
+    width: 90%;
+    background-color: white;
+    border-radius: 12px;
+    padding:2rem;
+    color: #666;
+
+
+    & h1 {
+        color:#666;
+    }
+
+    & h2 {
+        color:#666
+    }
+
+
+}
+
+.bottom-image-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color:#666;
+    
+
+    & h2 {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    &.left{
+ 
+        & img {
+          
+        }
+        
+    }
+
+    &.right{
+
+  
+       & img {
+           
+        }
+    }
+}
+
+
+.ingredients-instructions-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    height: 50vh;
+    
+   
+    
+}
+
+.ingredients-container{
+    
+    width: 30%;
+    padding: 2rem;
+     background-color: #ebebeb;
+
+    & ul {
+        list-style: circle;
+        & li {
+            padding:0.6rem;
+        }
+    }
+    & p {
+        padding:0.4rem;
+        width: 100%;
+    }
+    border-right: 2px solid #555;
+    
+    
+}
+
+.cooking-instructions-container{
+    width: 70%;
+    padding: 1rem;
+    text-align: left;
+    padding-left: 3rem;
+
+    & ol {
+        list-style:decimal;
+        & li {
+            padding:0.6rem;
+        }
+    }
+
+
 }
