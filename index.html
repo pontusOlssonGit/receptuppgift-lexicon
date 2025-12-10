@@ -110,9 +110,7 @@
 
         const cardContainer = document.getElementById('card-container');
 
-        cards.forEach(recipeCard => {
-            console.log(recipeCard.recipeName, recipeCard.image, recipeCard.link, recipeCard.desc);
-
+        const createCard = (recipeCard) => {
             const card = document.createElement('div');
             card.classList.add('card');
             const a = document.createElement('a');
@@ -140,7 +138,12 @@
             cardContent.appendChild(p);
             card.appendChild(cardContent);
             cardContainer.appendChild(card);
-        })
+            return card;
+        }
+        for(let i = 0; i < 24; i++){
+            let index = i % 8;
+            createCard(cards[index])
+        }
     </script>
 
 </body>
