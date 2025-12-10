@@ -17,6 +17,8 @@ a {
 ul,
 ol {
     list-style: none;
+    
+
 }
 body {
     font-family: "Quicksand", sans-serif;
@@ -263,11 +265,12 @@ footer {
             padding: 2rem;
 
             & li {
-                padding: 0.6rem;
+                list-style-position: inside;
+                box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+                padding: 1rem;
                 background-color: white;
                 margin: 1rem;
                 border-radius: 10px;
-                border: 0.5px solid #666;
             }
         }
 
@@ -297,13 +300,14 @@ footer {
         text-align: left;
         padding-left: 3rem;
         & ol {
-            list-style: circle;
+            list-style-type: decimal;
             & li {
+                list-style-position: inside;
+                box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
                 padding: 1rem;
                 background-color: white;
                 margin: 1rem;
                 border-radius: 10px;
-                border: 0.5px solid #666;
                 cursor: pointer;
                 transition: 0.1s ease-in-out;
                 &:hover {
