@@ -383,7 +383,9 @@ footer {
     }
 }
 
-
+.description-container{
+    padding-bottom: 3rem;
+}
 .ingredients-instructions-wrapper{
     display: flex;
     flex-direction: row;
@@ -412,7 +414,7 @@ footer {
         padding:0.4rem;
         width: 100%;
     }
-    border-right: 2px solid #555;
+    border-right: 2px solid #BB595F;
     
     
 }
