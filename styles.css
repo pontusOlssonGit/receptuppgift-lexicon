@@ -2,8 +2,6 @@
     --bg:#f4f4f9;
     --text-primary: #666;
     --white: #fff;
-    --off-white: #FCFCFC;
-    --grey: #EBEBEB;
     --font: 'open-sans', sans-serif;
 }
 
@@ -35,7 +33,6 @@ header {
     background: var(--white);
     display: flex;
     justify-content: center;
-
     & nav {
         width: 90vw;
         display: flex;
@@ -103,7 +100,6 @@ header {
     color: var(--white);
     padding: 10px 20px;
     transition: inset 0.1s;
-
     &:focus {
         inset: 0 auto auto 0;
         z-index: 20;
@@ -114,41 +110,42 @@ header {
     margin-bottom: 2rem;
     height: 40vh;
     position: relative;
-    overflow: hidden;
-
+    display: flex; 
+    align-items: end;
     & img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: inherit;
         filter: blur(4px) saturate(50%);
         z-index: -1;
         position: absolute;
-
+    }
+    & div {
+       margin-left: 4.5rem;
+       margin-bottom: 2rem;
     }
 
-    & h1,
-    p {
-        justify-self: center;
-        align-self: center;
-        width: 90vw;
-        margin-top: 10rem;
-        color: #fff;
-        z-index: 1;
-        font-size: 4rem;
+    & h1 {
+        font-size: 2.5rem;
+        display: flex;
+        align-items: end;
+        margin-top: 0;
         text-decoration: underline;
         text-decoration-color: #BB595F;
         text-decoration-thickness: 10px;
     }
 
+    & h1,
+    p { 
+        
+        justify-self: center;
+        color: #fff;
+        z-index: 1;
+        font-size: 2.5rem;
+    }
     & p {
-        margin-top: 0;
         font-size: large;
         padding-top: 0.5rem;
         text-decoration: none;
-        text-decoration-color: #BB595F;
-        text-decoration-thickness: 10px;
     }
-
 }
 
 .container {
@@ -173,94 +170,28 @@ header {
         text-decoration: underline;
         text-decoration-color: #555;
     }
-}
-
-.card:hover {
-    transform: translateY(-5px);
+    &:hover{
+         transform: translateY(-5px);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    }
 }
-
 .card-image {
     width: 100%;
-    height: 200px;
     object-fit: cover;
-    display: block;
 }
 
 .card-content {
     padding: 20px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
 }
-
 .card h3 {
-    margin-bottom: 10px;
-    color: #555;
+    margin-bottom: 0.5rem;
+    color: #666;
     font-size: 1.25rem;
 }
 
 .card p {
-
     line-height: 1.6;
     flex-grow: 1;
-}
-
-@media (max-width: 1300px) {
-    header {
-        & nav {
-            width: 100vw;
-        }
-    }
-}
-
-@media (max-width: 1024px) {
-
-    header {
-        position: static;
-
-        & nav {
-
-            width: 100vw;
-            display: flex;
-            flex-direction: column;
-            padding: 1rem;
-
-            & .logo {
-                text-align: center;
-                width: 100vw;
-            }
-
-            & button {
-                width: 30vw;
-            }
-
-            & ul {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-
-                & li {
-                    text-align: center;
-                    align-self: center;
-
-                }
-            }
-        }
-    }
-    .container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media (max-width: 600px) {
-    .container {
-        grid-template-columns: 1fr;
-        width: 95%;
-    }
-
-    .card-image {
-        height: 180px;
-    }
 }
 
 footer {
@@ -280,20 +211,22 @@ footer {
 .main-recipe {
     width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+#recipe-hero{
+    margin-bottom: 0rem;
+    & h1 {
+        margin-left:4.5rem;
+        margin-bottom: 4rem;
+    }
 }
 
 .recipe-container {
     width: 90%;
-    border-radius: 0rem 0rem 1rem 1rem;
-    display: flex;
-    flex-direction: column;
 }
 
 .bottom-image-container {
-    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -304,10 +237,6 @@ footer {
         margin-bottom: 1rem;
         margin-top: 2rem;
     }
-}
-
-.description-container {
-    padding-bottom: 3rem;
 }
 
 .ingredients-instructions-wrapper {
@@ -367,35 +296,22 @@ footer {
         padding: 1rem;
         text-align: left;
         padding-left: 3rem;
-        align-self: start;
-        justify-self: start;
-
         & ol {
-            list-style: decimal;
             list-style: circle;
-
-            border-bottom-left-radius: 1rem;
-            border-bottom-right-radius: 1rem;
-
             & li {
                 padding: 1rem;
                 background-color: white;
                 margin: 1rem;
                 border-radius: 10px;
                 border: 0.5px solid #666;
+                cursor: pointer;
                 transition: 0.1s ease-in-out;
-
                 &:hover {
-                    cursor: pointer;
+                   background-color: #f5f5f5;
                 }
             }
         }
     }
-
-    & h2 {
-        font-weight: bold;
-    }
-
 }
 
 .recipe-info {
@@ -426,6 +342,9 @@ footer {
 @media (max-width: 1280px) {
 
     .recipe-container {
+        width: 100%;
+    }
+    .recipe-info{
         width: 100%;
     }
 
@@ -474,16 +393,49 @@ footer {
     }
 
 }
+@media (max-width: 1024px) {
 
-#recipe-hero {
-    margin-bottom: 0;
+    header {
+        position: static;
 
-    & h1 {
-        font-size: 2.5rem;
-        display: flex;
-        align-items: end;
-        height: inherit;
-        padding-bottom: 2rem;
-        margin-top: 0;
+        & nav {
+
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+
+            & .logo {
+                text-align: center;
+                width: 100vw;
+            }
+
+            & button {
+                width: 30vw;
+            }
+
+            & ul {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+
+                & li {
+                    text-align: center;
+                    align-self: center;
+                }
+            }
+        }
+    }
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+        width: 95%;
+    }
+    .card-image {
+        height: 180px;
     }
 }
