@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Bungee+Spice&family=Quicksand:wght@300..700&family=Reem+Kufi+Fun:wght@400..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Bungee+Spice&family=Quicksand:wght@300..700&family=Reem+Kufi+Fun:wght@400..700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>Receptbank för pannkakor</title>
 </head>
@@ -27,49 +29,51 @@
             </button>
         </nav>
     </header>
-    <section class="hero">
+    <section id="recipe-hero" class="hero">
         <img src="/images/pancake-header.jpg" alt="" class="card-image">
         <h1>Vanliga Pannkakor</h1>
 
     </section>
-  
-   
+
     <main class="main-recipe">
         <article class="recipe-container">
-
-            <section class="description-container" id="recipe-content">
-                <h1>Enkelt Recept på pannkakor</h1>
-                <div class="description-background">
-                    <p>Gör traditionella tunna pannkakor med detta enkla och goda pannkaksrecept.</p>
+            <div class="recipe-info">
+                <div class="recipe-info-background">
+                <img src="icons/restaurant.svg">
+                <span>6 ingredienser</span>
+                <img src="icons/timer.svg">
+                <span>30 min</span>
                 </div>
-            </section>
-
+            </div>
 
             <div class="ingredients-instructions-wrapper">
-            <section class="ingredients-container">
-                <h2>Ingredienser</h2>
-                <p>För 4 portioner</p>
-                <ul>
-                    <li>2 1/2 dl vetemjöl</li>
-                    <li>1/2 tsk salt</li>
-                    <li>6 dl mjölk</li>
-                    <li>3 ägg</li>
-                    <li>smör (till stekning)</li>
-                    <li>sylt, bär eller frukt till servering</li>
-                </ul>
-            </section>
-
-            <section class="cooking-instructions-container">
-                <h2>Så här gör du</h2>
-                <ol>
-                    <li>Blanda mjöl och salt i en bunke.</li>
-                    <li>Vispa i hälften av mjölken och vispa till en slät smet. </li>
-                    <li>Vispa i resten av mjölken och äggen. </li>
-                    <li>Låt smeten vila ca 10 minuter.. </li>
-                    <li> Stek tunna pannkakor i lite smör, för varje pannkaka, i en stek- eller pannkakspanna. </li>
-                    <li>Servera med sylt, bär eller frukt</li>
-                </ol>
-            </section>
+                <section class="ingredients-container">
+                    <h2>Ingredienser</h2>
+                 
+                        <p>För 4 portioner</p>
+                        
+                    <ul>
+                        <li>2 1/2 dl vetemjöl</li>
+                        <li>1/2 tsk salt</li>
+                        <li>6 dl mjölk</li>
+                        <li>3 ägg</li>
+                        <li>smör (till stekning)</li>
+                        <li>sylt, bär eller frukt till servering</li>
+                    </ul>
+                    
+                </section>
+                
+                <section class="cooking-instructions-container">
+                        <h2>Så här gör du</h2>
+                    <ol>
+                        <li onclick="this.style.backgroundColor='rgb(60 165 103)',this.style.color='white'" >Blanda mjöl och salt i en bunke.</li>
+                        <li>Vispa i hälften av mjölken och vispa till en slät smet. </li>
+                        <li>Vispa i resten av mjölken och äggen. </li>
+                        <li>Låt smeten vila ca 10 minuter.. </li>
+                        <li> Stek tunna pannkakor i lite smör, för varje pannkaka, i en stek- eller pannkakspanna. </li>
+                        <li>Servera med sylt, bär eller frukt</li>
+                    </ol>
+                </section>
             </div>
 
             <section class="bottom-image-container">
@@ -83,13 +87,14 @@
                     <figcaption>Serverad med skivad apelsin</figcaption>
                 </figure>
             </section>
+            </div>
 
         </article>
     </main>
-
+    
     <footer>
         <section class="one">
-            <h4>footer</h4>
+            
         </section>
         <section class="two">
             <p>Receptsidan 2025</p>
@@ -97,4 +102,5 @@
     </footer>
 
 </body>
+
 </html>
