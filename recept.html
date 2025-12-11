@@ -30,7 +30,7 @@
         </nav>
     </header>
     <section id="recipe-hero" class="hero">
-        <img src="/images/pancake-header.jpg" alt="" class="card-image">
+        <img id ="hero-img" src="/images/pancake-header.jpg" alt="" class="card-image">
         <h1 id="hero-id">Vanliga Pannkakor</h1>
 
     </section>
@@ -106,14 +106,21 @@
         
         // 2. Extract the 'username' value
         const nameFromUrl = params.get('recipe');
+        const imageSrc = params.get('image')
 
         // 3. Render it on the page
         const h1 = document.getElementById('hero-id');
+        const img = document.getElementById('hero-img')
 
         if (nameFromUrl) {
             h1.textContent = nameFromUrl
         } else {
             h1.textContent = "";
+        }
+         if (imageSrc) {
+            img.src = imageSrc
+        } else {
+            img.src = "/images/pancake-header.jpg";
         }
     </script>
 
