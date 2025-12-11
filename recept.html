@@ -30,8 +30,8 @@
         </nav>
     </header>
     <section id="recipe-hero" class="hero">
-        <img src="/images/pancake-header.jpg" alt="" class="card-image">
-        <h1>Vanliga Pannkakor</h1>
+        <img id ="hero-img" src="/images/pancake-header.jpg" alt="" class="card-image">
+        <h1 id="hero-id">Vanliga Pannkakor</h1>
 
     </section>
 
@@ -53,10 +53,10 @@
                         <p>För 4 portioner</p>
                         
                     <ul>
-                        <li>2 1/2 dl vetemjöl</li>
-                        <li>1/2 tsk salt</li>
-                        <li>6 dl mjölk</li>
-                        <li>3 ägg</li>
+                        <li><strong>2 1/2 dl</strong> vetemjöl</li>
+                        <li><strong>1/2 tsk</strong> salt</li>
+                        <li><strong>6 dl</strong> mjölk</li>
+                        <li><strong>3 st</strong> ägg</li>
                         <li>smör (till stekning)</li>
                         <li>sylt, bär eller frukt till servering</li>
                     </ul>
@@ -66,12 +66,12 @@
                 <section class="cooking-instructions-container">
                         <h2>Så här gör du</h2>
                     <ol>
-                        <li onclick="this.style.backgroundColor='rgb(60 165 103)',this.style.color='white'" >Blanda mjöl och salt i en bunke.</li>
-                        <li>Vispa i hälften av mjölken och vispa till en slät smet. </li>
-                        <li>Vispa i resten av mjölken och äggen. </li>
-                        <li>Låt smeten vila ca 10 minuter.. </li>
-                        <li> Stek tunna pannkakor i lite smör, för varje pannkaka, i en stek- eller pannkakspanna. </li>
-                        <li>Servera med sylt, bär eller frukt</li>
+                        <li onclick="this.style.textDecoration='line-through'" >Blanda mjöl och salt i en bunke.</li>
+                        <li onclick="this.style.textDecoration='line-through'">Vispa i hälften av mjölken och vispa till en slät smet. </li>
+                        <li onclick="this.style.textDecoration='line-through'">Vispa i resten av mjölken och äggen. </li>
+                        <li onclick="this.style.textDecoration='line-through'">Låt smeten vila ca 10 minuter.. </li>
+                        <li onclick="this.style.textDecoration='line-through'"> Stek tunna pannkakor i lite smör, för varje pannkaka, i en stek- eller pannkakspanna. </li>
+                        <li onclick="this.style.textDecoration='line-through'">Servera med sylt, bär eller frukt</li>
                     </ol>
                 </section>
             </div>
@@ -100,6 +100,29 @@
             <p>Receptsidan 2025</p>
         </section>
     </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        
+        // 2. Extract the 'username' value
+        const nameFromUrl = params.get('recipe');
+        const imageSrc = params.get('image')
+
+        // 3. Render it on the page
+        const h1 = document.getElementById('hero-id');
+        const img = document.getElementById('hero-img')
+
+        if (nameFromUrl) {
+            h1.textContent = nameFromUrl
+        } else {
+            h1.textContent = "";
+        }
+         if (imageSrc) {
+            img.src = imageSrc
+        } else {
+            img.src = "/images/pancake-header.jpg";
+        }
+    </script>
 
 </body>
 
