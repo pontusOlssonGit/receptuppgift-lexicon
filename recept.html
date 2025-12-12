@@ -42,7 +42,7 @@
                 <img src="icons/restaurant.svg">
                 <span>6 ingredienser</span>
                 <img src="icons/timer.svg">
-                <span>30 min</span>
+                <span>30min</span>
                 </div>
             </div>
 
@@ -79,11 +79,11 @@
             <section class="bottom-image-container">
                 <h2 class="bottom-image-heading">Serveringsförslag</h2>
                 <figure class="left">
-                    <img class="bottom-image" src="images/american.jpg" height="600" width="600" alt="">
+                    <img class="bottom-image" src="images/american.jpg" height="500" width="500" alt="">
                     <figcaption>Naturella Pannkakor</figcaption>
                 </figure>
                 <figure class="right">
-                    <img class="bottom-image" src="images/belgian.jpg" height="600" width="600" alt="">
+                    <img class="bottom-image" src="images/belgian.jpg" height="500" width="500" alt="">
                     <figcaption>Serverad med skivad apelsin</figcaption>
                 </figure>
             </section>
@@ -104,11 +104,9 @@
     <script>
         const params = new URLSearchParams(window.location.search);
         
-        // 2. Extract the 'username' value
         const nameFromUrl = params.get('recipe');
         const imageSrc = params.get('image')
 
-        // 3. Render it on the page
         const h1 = document.getElementById('hero-id');
         const img = document.getElementById('hero-img')
 
@@ -122,6 +120,21 @@
         } else {
             img.src = "/images/pancake-header.jpg";
         }
+
+         // OVERSCROLL BG COLOR FIX
+
+        let isCeiling = false;
+        window.addEventListener('wheel', (e) => {
+        const scrollPositionY = e.deltaY;
+        if (scrollPositionY < 0 && !isCeiling) {
+            document.documentElement.style.background = 'white';
+            isCeiling = true;
+        } else if (scrollPositionY > 0 && isCeiling) {
+            document.documentElement.style.background = '#BB595F';
+            isCeiling = false;
+        }
+
+        });
     </script>
 
 </body>
