@@ -459,6 +459,10 @@ footer {
                 & li {
                     text-align: center;
                     align-self: center;
+                    padding:0.5rem;
+                }
+                & li:last-child{
+                    margin-bottom: 0.5rem;
                 }
             }
         }
