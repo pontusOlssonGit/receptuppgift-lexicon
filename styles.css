@@ -13,9 +13,11 @@
 a {
     text-decoration: none;
 }
+li,
 ul,
 ol {
     list-style: none;
+    text-decoration: none;
     
 
 }

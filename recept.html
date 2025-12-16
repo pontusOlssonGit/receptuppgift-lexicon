@@ -30,7 +30,7 @@
         </nav>
     </header>
     <section id="recipe-hero" class="hero">
-        <img id ="hero-img" src="/images/pancake-header.jpg" alt="" class="card-image">
+        <img id="hero-img" src="/images/pancake-header.jpg" alt="" class="card-image">
         <h1 id="hero-id">Vanliga Pannkakor</h1>
 
     </section>
@@ -39,19 +39,17 @@
         <article class="recipe-container">
             <div class="recipe-info">
                 <div class="recipe-info-background">
-                <img src="icons/restaurant.svg">
-                <span>6 ingredienser</span>
-                <img src="icons/timer.svg">
-                <span>30min</span>
+                    <img src="icons/restaurant.svg">
+                    <span>6 ingredienser</span>
+                    <img src="icons/timer.svg">
+                    <span>30min</span>
                 </div>
             </div>
 
             <div class="ingredients-instructions-wrapper">
                 <section class="ingredients-container">
                     <h2>Ingredienser</h2>
-                 
-                        <p>För 4 portioner</p>
-                        
+                    <p>För 4 portioner</p>
                     <ul>
                         <li><strong>2 1/2 dl</strong> vetemjöl</li>
                         <li><strong>1/2 tsk</strong> salt</li>
@@ -60,18 +58,20 @@
                         <li>smör (till stekning)</li>
                         <li>sylt, bär eller frukt till servering</li>
                     </ul>
-                    
+
                 </section>
-                
                 <section class="cooking-instructions-container">
-                        <h2>Så här gör du</h2>
+                    <h2>Så här gör du</h2>
                     <ol>
-                        <li onclick="this.style.textDecoration='line-through'" >Blanda mjöl och salt i en bunke.</li>
-                        <li onclick="this.style.textDecoration='line-through'">Vispa i hälften av mjölken och vispa till en slät smet. </li>
-                        <li onclick="this.style.textDecoration='line-through'">Vispa i resten av mjölken och äggen. </li>
-                        <li onclick="this.style.textDecoration='line-through'">Låt smeten vila ca 10 minuter.. </li>
-                        <li onclick="this.style.textDecoration='line-through'"> Stek tunna pannkakor i lite smör, för varje pannkaka, i en stek- eller pannkakspanna. </li>
-                        <li onclick="this.style.textDecoration='line-through'">Servera med sylt, bär eller frukt</li>
+                        <li onclick="instructionClick(this)">Blanda mjöl och salt i en bunke.</li>
+                        <li onclick="instructionClick(this)">Vispa i hälften av mjölken och vispa till
+                            en slät smet. </li>
+                        <li onclick="instructionClick(this)">Vispa i resten av mjölken och äggen.
+                        </li>
+                        <li onclick="instructionClick(this)">Låt smeten vila ca 10 minuter.. </li>
+                        <li onclick="instructionClick(this)"> Stek tunna pannkakor i lite smör, för
+                            varje pannkaka, i en stek- eller pannkakspanna. </li>
+                        <li onclick="instructionClick(this)">Servera med sylt, bär eller frukt</li>
                     </ol>
                 </section>
             </div>
@@ -87,56 +87,17 @@
                     <figcaption>Serverad med skivad apelsin</figcaption>
                 </figure>
             </section>
-            </div>
 
         </article>
     </main>
-    
     <footer>
         <section class="one">
-            
         </section>
         <section class="two">
             <p>Receptsidan 2025</p>
         </section>
     </footer>
-
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        
-        const nameFromUrl = params.get('recipe');
-        const imageSrc = params.get('image')
-
-        const h1 = document.getElementById('hero-id');
-        const img = document.getElementById('hero-img')
-
-        if (nameFromUrl) {
-            h1.textContent = nameFromUrl
-        } else {
-            h1.textContent = "";
-        }
-         if (imageSrc) {
-            img.src = imageSrc
-        } else {
-            img.src = "/images/pancake-header.jpg";
-        }
-
-         // OVERSCROLL BG COLOR FIX
-
-        let isCeiling = false;
-        window.addEventListener('wheel', (e) => {
-        const scrollPositionY = e.deltaY;
-        if (scrollPositionY < 0 && !isCeiling) {
-            document.documentElement.style.background = 'white';
-            isCeiling = true;
-        } else if (scrollPositionY > 0 && isCeiling) {
-            document.documentElement.style.background = '#BB595F';
-            isCeiling = false;
-        }
-
-        });
-    </script>
-
+    <script src="/scripts/recept.js"></script>
 </body>
 
 </html>
