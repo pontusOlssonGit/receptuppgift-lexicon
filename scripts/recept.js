@@ -3,6 +3,8 @@ const params = new URLSearchParams(window.location.search);
 const nameFromUrl = params.get("recipe");
 const imageSrc = params.get("image");
 
+document.getElementById("title").textContent = nameFromUrl
+
 const h1 = document.getElementById("hero-id");
 const img = document.getElementById("hero-img");
 
@@ -19,6 +21,7 @@ if (imageSrc) {
 
 
 let rating = 0;
+let numberOfRatings = 0;
 // OVERSCROLL BG COLOR FIX
 
 let isCeiling = false;
@@ -62,3 +65,13 @@ const setStarColors = () => {
       document.getElementById("star"+(i+1)).style.filter='none'
     }
 }
+const form = document.getElementById("form");
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    document.getElementById('ratingModal').close()
+    numberOfRatings++;
+
+    document.getElementById('numberOfRatings').textContent = numberOfRatings;
+    console.log("SUBMITTED",numberOfRatings);
+    
+});

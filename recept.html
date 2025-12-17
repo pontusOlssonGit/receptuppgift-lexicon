@@ -11,7 +11,8 @@
         href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Bungee+Spice&family=Quicksand:wght@300..700&family=Reem+Kufi+Fun:wght@400..700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <title>Receptbank för pannkakor</title>
+    <title id="title">Receptsidan</title>
+    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
 </head>
 
 <body>
@@ -22,12 +23,41 @@
             <ul>
                 <li><a href="/index.html">Alla Recept</a></li>
                 <li><a href="/index.html">Om Oss</a></li>
-                <li><a href="/index.html">Kontakt</a></li>
+                <li><a onclick="document.getElementById('contactModal').showModal()">Kontakt</a></li>
             </ul>
             <button>
                 Logga in
             </button>
         </nav>
+
+
+        <dialog id="contactModal">
+            <div class="modal">
+
+                <h2>Kontakt</h2>
+
+                <form action="#" method="POST">
+
+                    <div class="form-group">
+                        <label for="name">Namn</label>
+                        <input type="text" id="name" name="name" placeholder="Ditt Namn" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Epost</label>
+                        <input type="email" id="email" name="email" placeholder="epost@epost.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Meddelande</label>
+                        <textarea id="message" name="message" placeholder="Hur kan vi hjälpa till?" required></textarea>
+                    </div>
+
+                    <button type="submit">Skicka</button>
+
+                </form>
+            </div>
+        </dialog>
     </header>
     <section id="recipe-hero" class="hero">
         <img id="hero-img" src="/images/pancake-header.jpg" alt="" class="card-image">
@@ -44,25 +74,27 @@
         <article class="recipe-container">
             <div class="recipe-info">
 
-                <div class="recipe-rating-background" onclick="document.getElementById('viewModal').showModal()">
+                <div class="recipe-rating-background" onclick="document.getElementById('ratingModal').showModal()">
                     <img class="star-non-modal" src="icons/star.svg">
                     <img class="star-non-modal" src="icons/star.svg">
                     <img class="star-non-modal" src="icons/star.svg">
                     <img class="star-non-modal" src="icons/star.svg">
                     <img class="star-non-modal" src="icons/star.svg">
                     <div class="ratings-number-bg">
-                        <p class="ratings-number">0</p>
+                        <p id="numberOfRatings" class="ratings-number">0</p>
                     </div>
                 </div>
 
-                <dialog id="viewModal">
-                    <div class="modal">
+                <dialog id="ratingModal">
+                    <div class="rating-modal">
 
                         <h2>Vad tycker du?</h2>
-                        <p>Sätt betyg på receptet: </p>
+                    
+                        <p>Sätt betyg på receptet: <strong id="ratingNumber"></strong></p>
+                  
 
-                        <form action="#" method="POST">
-                            <div>
+                        <form id="form">
+                            <div class="star-container">
                                 <input type="radio" id="starOne" name="rating" value="1" onclick="setRating(this.value)">
                                 <label for="starOne">
                                 <img id="star1" class="star" src="icons/star.svg">
@@ -86,15 +118,16 @@
                                 </label>
                                 </input>
 
+                            </div>
+
                                 <div class="ratings-number-bg">
-                                    <p id="ratingNumber" class="ratings-number">0</p>
                                     <div class="form-button-div">
                                         <button id="ratingButton" disabled="true" type="submit">Sätt mitt betyg</button>
                                         <button type="reset"
-                                            onclick="document.getElementById('viewModal').close()">Stäng</button>
+                                            onclick="document.getElementById('ratingModal').close()">Stäng</button>
                                     </div>
                                 </div>
-                            </div>
+                            
                         </form>
                     </div>
                 </dialog>
@@ -140,11 +173,11 @@
             <section class="bottom-image-container">
                 <h2 class="bottom-image-heading">Serveringsförslag</h2>
                 <figure class="left">
-                    <img class="bottom-image" src="images/american.jpg" height="500" width="500" alt="">
+                    <img class="bottom-image" src="images/american.jpg" height="400" width="400" alt="">
                     <figcaption>Naturella Pannkakor</figcaption>
                 </figure>
                 <figure class="right">
-                    <img class="bottom-image" src="images/belgian.jpg" height="500" width="500" alt="">
+                    <img class="bottom-image" src="images/belgian.jpg" height="400" width="400" alt="">
                     <figcaption>Serverad med skivad apelsin</figcaption>
                 </figure>
             </section>
@@ -152,11 +185,7 @@
         </article>
     </main>
     <footer>
-        <section class="one">
-        </section>
-        <section class="two">
-            <p>Receptsidan 2025</p>
-        </section>
+            <p>© Receptsidan 2025</p>
     </footer>
     <script src="/scripts/recept.js"></script>
 </body>
