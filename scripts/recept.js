@@ -17,6 +17,8 @@ if (imageSrc) {
   img.src = "/images/pancake-header.jpg";
 }
 
+
+let rating = 0;
 // OVERSCROLL BG COLOR FIX
 
 let isCeiling = false;
@@ -40,4 +42,23 @@ const instructionClick = (listItem) => {
          listItem.style.textDecoration='none'
     }
     
+}
+
+const setRating = (value) => {
+  rating = value;
+  console.log(rating);
+  setStarColors();
+  document.getElementById("ratingNumber").textContent = rating;
+  document.getElementById("ratingButton").disabled = false;
+  
+}
+
+const setStarColors = () => {
+
+    for(let i = 0; i<5; i++){
+        document.getElementById("star"+(i+1)).style.filter='contrast(0)'
+    }
+    for(let i = 0; i<rating; i++){
+      document.getElementById("star"+(i+1)).style.filter='none'
+    }
 }

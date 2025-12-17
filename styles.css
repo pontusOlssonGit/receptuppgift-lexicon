@@ -409,6 +409,7 @@ footer {
 
 
     }
+
     & .recipe-rating-background{
         display: flex;
         flex-direction: row;
@@ -417,6 +418,8 @@ footer {
         margin-top: 1rem;
         margin-bottom: 1rem;
         border-radius: 0.5rem;
+        cursor: pointer;
+        
         & .ratings-number-bg{
             background-color: #bb59605e;
             padding:0.2rem;
@@ -429,6 +432,9 @@ footer {
             font-weight: bold;
             }
         }
+    }
+    & .recipe-rating-background:hover{
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 }
 
@@ -554,7 +560,7 @@ footer {
     width: fit-content;
     height: fit-content;
     background-color: #fff;
-    min-width: 60vw;
+    min-width: 40vw;
     max-width: 90vw;
     padding: 5rem;
     border-radius: 1rem;
@@ -616,14 +622,61 @@ button {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+button:disabled{
+    background-color: #bb59605c;
+}
+button:disabled:hover{
+    background-color: #bb59605c;
+}
 
 button:hover {
     background-color: #AF3C3F;
 }
 
-.star{
-    filter:contrast(0)
+
+
+
+.star-non-modal{
+     filter:contrast(0);
+     cursor: pointer;
 }
-.star:hover {
-    filter:none
+
+.star{
+    filter:contrast(0);
+     cursor: pointer;
+}
+ .star:hover{
+    filter:none;
+    /* :has(+ &) {
+        filter:none;
+    }
+    :has(+ * + &) {
+        filter:none;
+    }
+    :has(+ * + * + &) {
+        filter:none;
+    }
+    :has(+ * + * + * + &) {
+        filter:none;
+    } */
+}
+
+
+
+
+.form-button-div{
+    display: flex;
+    flex-direction: row;
+    
+    & button:last-child{
+        margin-left: 1rem;
+        background-color: #666;
+    }
+    
+}
+
+.modal{
+    & input{
+        display: none;
+    }
 }
