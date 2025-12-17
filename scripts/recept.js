@@ -3,6 +3,8 @@ const params = new URLSearchParams(window.location.search);
 const nameFromUrl = params.get("recipe");
 const imageSrc = params.get("image");
 
+document.getElementById("title").textContent = nameFromUrl
+
 const h1 = document.getElementById("hero-id");
 const img = document.getElementById("hero-img");
 
@@ -17,6 +19,9 @@ if (imageSrc) {
   img.src = "/images/pancake-header.jpg";
 }
 
+
+let rating = 0;
+let numberOfRatings = 0;
 // OVERSCROLL BG COLOR FIX
 
 let isCeiling = false;
@@ -41,3 +46,32 @@ const instructionClick = (listItem) => {
     }
     
 }
+
+const setRating = (value) => {
+  rating = value;
+  console.log(rating);
+  setStarColors();
+  document.getElementById("ratingNumber").textContent = rating;
+  document.getElementById("ratingButton").disabled = false;
+  
+}
+
+const setStarColors = () => {
+
+    for(let i = 0; i<5; i++){
+        document.getElementById("star"+(i+1)).style.filter='contrast(0)'
+    }
+    for(let i = 0; i<rating; i++){
+      document.getElementById("star"+(i+1)).style.filter='none'
+    }
+}
+const form = document.getElementById("form");
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    document.getElementById('ratingModal').close()
+    numberOfRatings++;
+
+    document.getElementById('numberOfRatings').textContent = numberOfRatings;
+    console.log("SUBMITTED",numberOfRatings);
+    
+});
