@@ -110,15 +110,3 @@ for (let i = 0; i < 24; i++) {
   let index = i % 8;
   createCard(cards[index]);
 }
-
-let isCeiling = false;
-window.addEventListener("wheel", (e) => {
-  const scrollPositionY = e.deltaY;
-  if (scrollPositionY < 0 && !isCeiling) {
-    document.documentElement.style.background = "white";
-    isCeiling = true;
-  } else if (scrollPositionY > 0 && isCeiling) {
-    document.documentElement.style.background = "#BB595F";
-    isCeiling = false;
-  }
-});

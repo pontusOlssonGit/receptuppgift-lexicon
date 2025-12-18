@@ -22,20 +22,7 @@ if (imageSrc) {
 
 let rating = 0;
 let numberOfRatings = 0;
-// OVERSCROLL BG COLOR FIX
-
-let isCeiling = false;
-window.addEventListener("wheel", (e) => {
-  const scrollPositionY = e.deltaY;
-  if (scrollPositionY < 0 && !isCeiling) {
-    document.documentElement.style.background = "white";
-    isCeiling = true;
-  } else if (scrollPositionY > 0 && isCeiling) {
-    document.documentElement.style.background = "#BB595F";
-    isCeiling = false;
-  }
-});
-
+const ratings = [];
 
 const instructionClick = (listItem) => {
 
@@ -71,7 +58,35 @@ form.addEventListener('submit', (event) => {
     document.getElementById('ratingModal').close()
     numberOfRatings++;
 
-    document.getElementById('numberOfRatings').textContent = numberOfRatings;
-    console.log("SUBMITTED",numberOfRatings);
+
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
+    console.log(data);
     
+    ratings.push(data.rating)
+    
+
+    calculateRatings();
+    
+    document.getElementById('numberOfRatings').textContent = numberOfRatings;
+
 });
+
+const calculateRatings = () => {
+  let totalRating = 0;
+  ratings.forEach(rating => {
+    totalRating+= parseInt(rating)
+  });
+  let average = Math.floor(totalRating/numberOfRatings);
+
+    for(let i = 0; i<5; i++){
+        document.getElementById("nonModalStar"+(i+1)).style.filter='contrast(0)'
+    }
+    for(let i = 0; i<average; i++){
+      document.getElementById("nonModalStar"+(i+1)).style.filter='none'
+    }
+  
+  
+
+}
+

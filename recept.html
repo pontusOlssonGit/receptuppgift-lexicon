@@ -45,7 +45,7 @@
 
                     <div class="form-group">
                         <label for="email">Epost</label>
-                        <input type="email" id="email" name="email" placeholder="epost@epost.com" required>
+                        <input type="email" id="email" name="email" placeholder="epost@epost.com" autocomplete="email" required>
                     </div>
 
                     <div class="form-group">
@@ -75,11 +75,11 @@
             <div class="recipe-info">
 
                 <div class="recipe-rating-background" onclick="document.getElementById('ratingModal').showModal()">
-                    <img class="star-non-modal" src="icons/star.svg">
-                    <img class="star-non-modal" src="icons/star.svg">
-                    <img class="star-non-modal" src="icons/star.svg">
-                    <img class="star-non-modal" src="icons/star.svg">
-                    <img class="star-non-modal" src="icons/star.svg">
+                    <img id="nonModalStar1" class="star-non-modal" src="icons/star.svg">
+                    <img id="nonModalStar2" class="star-non-modal" src="icons/star.svg">
+                    <img id="nonModalStar3" class="star-non-modal" src="icons/star.svg">
+                    <img id="nonModalStar4" class="star-non-modal" src="icons/star.svg">
+                    <img id="nonModalStar5" class="star-non-modal" src="icons/star.svg">
                     <div class="ratings-number-bg">
                         <p id="numberOfRatings" class="ratings-number">0</p>
                     </div>
@@ -139,6 +139,8 @@
                     <span>30min</span>
                 </div>
             </div>
+
+            <p class="recipe-description">Gör traditionella tunna pannkakor genom att blanda mjöl, mjölk och ägg och lite salt till en jämn smet. Stek smeten till tunna och smarriga pannkakor och servera med en söt sylt eller salta tillbehör.</p>
 
             <div class="ingredients-instructions-wrapper">
                 <section class="ingredients-container">
