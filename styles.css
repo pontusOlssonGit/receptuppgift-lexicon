@@ -450,6 +450,11 @@ footer {
 
 @media (max-width: 1280px) {
 
+    .hero div{
+    margin-left: 2.5rem;
+
+    }
+
     .recipe-container {
         width: 100%;
         & .recipe-description{
@@ -554,6 +559,13 @@ footer {
 }
 
 @media (max-width: 600px) {
+
+
+
+    .hero div{
+    margin-left: 1rem;
+
+    }
     .container {
         grid-template-columns: 1fr;
         width: 95%;
